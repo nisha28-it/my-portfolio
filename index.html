@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreenisha M | Frontend Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c4a747;
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(196, 167, 71, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #c4a747;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #c4a747, #a08030);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #0a0a0f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, #ffffff, #c4a747);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero .title {
+            font-size: 1.2rem;
+            color: #c4a747;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .hero .tagline {
+            color: #888;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #c4a747;
+            color: #0a0a0f;
+        }
+
+        .btn-primary:hover {
+            background: #a08030;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #c4a747;
+            color: #c4a747;
+        }
+
+        .btn-outline:hover {
+            background: #c4a747;
+            color: #0a0a0f;
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: #c4a747;
+        }
+
+        .stat p {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #c4a747;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+
+        .avatar {
+            text-align: center;
+        }
+
+        .avatar-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #c4a747, #a08030);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 800;
+            color: #0a0a0f;
+        }
+
+        .about-text p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            font-size: 1.2rem;
+            color: #c4a747;
+        }
+
+        .info-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-val {
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* Skills Section */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skills-category {
+            background: #111115;
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .skills-category h3 {
+            color: #c4a747;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(196, 167, 71, 0.1);
+            border: 1px solid rgba(196, 167, 71, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #c4a747;
+            color: #0a0a0f;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #111115;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(196, 167, 71, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #aaa;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tech span {
+            background: rgba(196, 167, 71, 0.1);
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: #c4a747;
+        }
+
+        .project-link {
+            color: #c4a747;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Experience Section */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .exp-card {
+            background: #111115;
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .exp-card h3 {
+            color: #c4a747;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(196, 167, 71, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .exp-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .exp-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .exp-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-item .company {
+            color: #c4a747;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .exp-item .date {
+            color: #666;
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+        }
+
+        .cert-item {
+            margin-bottom: 0.8rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .achievement-item {
+            margin-bottom: 0.8rem;
+            color: #aaa;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        .achievement-item i {
+            color: #c4a747;
+            margin-top: 3px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            background: #111115;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background: #c4a747;
+            color: #0a0a0f;
+            transform: translateY(-3px);
+        }
+
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .scroll-hint {
+            text-align: center;
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.8rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="badge">Available for Internships</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="title">FRONTEND DEVELOPER</div>
+                <h1>Sreenisha M</h1>
+                <p class="tagline">Building clean, responsive web experiences with React & TypeScript</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/nisha28-it" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> GitHub →
+                    </a>
+                    <a href="https://linkedin.com/in/sree-nisha-m-037b57376" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="stats">
+                    <div class="stat"><h3>7.6
+                    </h3><p>CGPA</p></div>
+                    <div class="stat"><h3>4+</h3><p>PROJECTS</p></div>
+                    <div class="stat"><h3>3+</h3><p>INTERNSHIPS</p></div>
+                    <div class="stat"><h3>5+</h3><p>TECHNOLOGIES</p></div>
+                </div>
+                <div class="scroll-hint">
+                    ↓ SCROLL
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="about-grid">
+                <div class="avatar">
+                    <div class="avatar-placeholder">SM</div>
+                    <div class="info-item" style="margin-top: 1rem;">
+                        <i class="fas fa-map-marker-alt info-icon"></i>
+                        <div>
+                            <div class="info-label">LOCATION</div>
+                            <div class="info-val">Salem, Tamil Nadu</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Hi! I'm Sreenisha, a 2nd year Information Technology student at K.S.R. College of Engineering, Namakkal, with a CGPA of 8.1. I'm passionate about building clean, responsive, and user-friendly web experiences. I specialize in frontend development and have worked on projects like hostel management systems and charity subscription platforms. I'm currently seeking internship and entry-level opportunities where I can grow as a frontend developer and contribute meaningfully to a team.</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap info-icon"></i>
+                            <div>
+                                <div class="info-label">COLLEGE</div>
+                                <div class="info-val">K.S.R. College of Engineering</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-book info-icon"></i>
+                            <div>
+                                <div class="info-label">DEGREE</div>
+                                <div class="info-val">B.Tech - Information Technology</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope info-icon"></i>
+                            <div>
+                                <div class="info-label">EMAIL</div>
+                                <div class="info-val">nishamanogaran28@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone info-icon"></i>
+                            <div>
+                                <div class="info-label">PHONE</div>
+                                <div class="info-val">+91 8925412373</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skills-category">
+                    <h3>FRONTEND</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>BACKEND</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Supabase</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>DATABASES</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>LANGUAGES</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>TOOLS</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Excel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Smart Hostel Management System</h3>
+                    <p>Full-stack web app with role-based dashboards for admin, staff, and students. Features QR-based attendance with GPS verification, complaint management, and a food voting system.</p>
+                    <div class="project-tech">
+                        <span>Spring Boot</span>
+                        <span>MySQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="https://github.com/nisha28-it" class="project-link" target="_blank">GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Golf Charity Subscription Platform</h3>
+                    <p>Full-stack platform with user authentication, monthly/yearly subscription plans, Stripe payment integration, prize draw engine, and admin dashboard.</p>
+                    <div class="project-tech">
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <a href="https://github.com/nisha28-it" class="project-link" target="_blank">GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Finance Dashboard</h3>
+                    <p>Interactive financial dashboard built with React, featuring real-time data visualization, expense tracking, and clean responsive UI.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                    </div>
+                    <a href="https://github.com/nisha28-it" class="project-link" target="_blank">GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Escape Room Hub</h3>
+                    <p>JavaScript-based interactive escape room web experience with puzzle logic, timer mechanics, and immersive UI design.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <a href="https://github.com/nisha28-it" class="project-link" target="_blank">GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="exp-grid">
+                <div class="exp-card">
+                    <h3>INTERNSHIPS</h3>
+                    <div class="exp-item">
+                        <h4>Web Development Intern</h4>
+                        <div class="company">Prodigy InfoTech</div>
+                        <div class="date">May - Jun 2026 · Virtual</div>
+                    </div>
+                    <div class="exp-item">
+                        <h4>Web Development Intern</h4>
+                        <div class="company">CodSoft</div>
+                        <div class="date">May - Jun 2026 · Virtual</div>
+                    </div>
+                    <div class="exp-item">
+                        <h4>Data Analytics Intern</h4>
+                        <div class="company">Infronex IT Products and Services</div>
+                        <div class="date">Jan - Dec 2025 · On-site</div>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <h3>CERTIFICATIONS</h3>
+                    <div class="cert-item">📜 Data Structures and Algorithms — NPTEL Swayam</div>
+                    <div class="cert-item">📜 Learnathon 2025 — Industry-standard Training Program</div>
+                    <div class="cert-item">📜 QA: Become a Game Tester 2026 — Udemy</div>
+                </div>
+                <div class="exp-card">
+                    <h3>ACHIEVEMENTS</h3>
+                    <div class="achievement-item"><i class="fas fa-trophy"></i> Presented projects at technical symposiums at Hindustan College and Karpagam College</div>
+                    <div class="achievement-item"><i class="fas fa-hand-heart"></i> Volunteered with Rotary Club — community outreach, event coordination, and social awareness</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-content">
+                <p>I'm open to internships and entry-level frontend roles. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:nishamanogaran28@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/nisha28-it" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/sree-nisha-m-037b57376" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Sreenisha M - Built with React</p>
+    </footer>
+</body>
+</html>
