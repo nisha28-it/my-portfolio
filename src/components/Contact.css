@@ -1,0 +1,52 @@
+.contact {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.contact-info {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.contact-item {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.contact-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: border-color 0.3s;
+}
+
+.contact-info a:hover {
+  border-bottom-color: white;
+}
+
+.footer {
+  margin-top: 2rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}

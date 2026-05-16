@@ -1,0 +1,57 @@
+.experience {
+  background: #f8f9fa;
+  padding: 80px 5%;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-section {
+  margin-bottom: 2.5rem;
+}
+
+.subsection-title {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.internship-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.internship-item h4 {
+  color: #1a1a2e;
+  margin-bottom: 0.3rem;
+}
+
+.company {
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.duration {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.certification-list, .achievement-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.certification-list li, .achievement-list li {
+  background: white;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  color: #555;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
