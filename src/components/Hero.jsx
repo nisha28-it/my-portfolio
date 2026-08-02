@@ -16,6 +16,7 @@ const Hero = () => {
         <div className="hero-buttons">
           <a href="https://github.com/nisha28-it" className="btn btn-primary">GitHub →</a>
           <a href="https://linkedin.com/in/sree-nisha-m-037b57376" className="btn btn-secondary">LinkedIn</a>
+          <a href="https://sreenisha-resume-copy.revdoku.site/" className="btn btn-primary">Resume →</a>
           <a href="#contact" className="btn btn-primary">Contact Me</a>
         </div>
         <div className="stats">
@@ -28,7 +29,7 @@ const Hero = () => {
             <div className="stat-label">PROJECTS</div>
           </div>
           <div className="stat">
-            <div className="stat-value">3+</div>
+            <div className="stat-value">4+</div>
             <div className="stat-label">INTERNSHIPS</div>
           </div>
           <div className="stat">

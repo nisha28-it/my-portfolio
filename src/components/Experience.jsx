@@ -16,9 +16,9 @@ const Experience = () => {
               <p className="duration">May – Jun 2028 · Virtual</p>
             </div>
             <div className="internship-item">
-              <h4>Web Development Intern</h4>
-              <p className="company">CodSoft</p>
-              <p className="duration">May – Jun 2028 · Virtual</p>
+              <h4>AI-ML Intern</h4>
+              <p className="company">United Soft Tech</p>
+              <p className="duration">June – July 2026 · On-site</p>
             </div>
             <div className="internship-item">
               <h4>Data Analytics Intern</h4>
